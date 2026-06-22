@@ -1,0 +1,1166 @@
+A DIGITAL PLATFORM FOR PHYTOMINING TECHNOLOGY
+(Web Application)
+Submitted by
+BASKAR V
+(Reg. No: 513124622004)
+Of
+THANTHAI PERIYAR GOVERNMENT INSTITUTE OF TECHNOLOGY
+                                                       VELLORE- 632 002
+                                       A PROJECT REPORT
+Submitted to the
+FACULTY OF MASTER OF COMPUTER APPLICATIONS
+In partial fulfillment of the requirements for the award of the degree
+Of
+                     MASTER OF COMPUTER APPLICATIONS
+                        ANNA UNIVERSITY,
+                      CHENNAI-600 025 
+BONAFIDE CERTIFICATE
+            Certified that this project report titled “A DIGITAL PLATFORM  FOR PHYTOMINING TECHNOLOGY (Web Application)” is the bonafide work has been done by Mr. V. BASKAR (Reg. No: 513124622004)  who carried out the project under my supervision.  Certified further, that to the best of knowledge, the work report or dissertation on the basis of which a degree or award was conferred on an earlier occasion on this or any other candidate.
+SupervisorHead of the Department
+          Mr. N. SANTHOSH, MCA.,          Dr. S. SELVI, M.E., Ph.D.,
+Assistant Professor,Head of  the Department,
+Dept. of MCA,Dept. of MCA,
+TPGIT,TPGIT,
+Vellore-2.Vellore-2.
+Submitted for project Viva Examination held on 
+Internal Examiner           External Examiner
+ABSTRACT
+The scope of the PHYTOMINE project is to design and implement a secure, modular, and computation-driven web application that digitally models the complete phytomining process, from plant growth evaluation to environmental safety assessment. The system focuses on providing accurate, validated, and traceable analysis of rare earth element recovery using plant-based mining techniques.
+The project strictly operates on admin-validated input data, ensuring that all calculations across the system are performed using scientifically controlled values without assumptions or auto-generated data. This approach improves reliability, eliminates computational ambiguity, and ensures consistency throughout all modules. 
+A PHYTOMINE covers five functional modules—Admin, Cultivator, Accumulator, Extractor, and Sustainer—each responsible for a specific phase of the phytomining lifecycle. The Cultivator module analyzes fern growth efficiency, the Accumulator module evaluates metal uptake and bioaccumulation, the Extractor module computes metal recovery and loss, and the Sustainer module assesses post-extraction soil safety using clustering-based environmental analysis. The system supports encrypted inter-module data exchange, ensuring confidentiality and integrity of sensitive computational outputs. 
+The scope also includes role-based access control, registration approval workflows, encrypted report sharing with key-based decryption, and automated generation of a consolidated PDF report summarizing the entire phytomining process. The project is intended for academic research, sustainable mining studies, and environmental analysis simulations, and does not involve real-time field deployment or hardware integration.
+ Overall, PHYTOMINE provides a scalable and secure digital framework for analyzing sustainable metal recovery processes while maintaining environmental compliance and computational accuracy.
+ACKNOWLEDGEMENT
+     I offer my gratitude to the Lord Almighty whose grace guided me and helped me all along to complete the project successfully. To the Lord’s glory I supplicate this work.
+     I express my sincere thanks to Dr. S. LETITIA, M.E., Ph.D.,  PRINCIPAL,  Department of  Master  of Computer Applications for taking a keen interest in the project and for guiding throughout the work even under her busy schedule.
+     I am thankful to Mr. S. KALIDASAN, MCA., Assistant  Professor ,  Faculty Advisor and  Project Coordinator,  Department of  Master of  Computer Application for his valuable guidance and motivation to complete this project. His efforts to bring out the best in me, his availability at all times and thought providing questions and timely suggestions.
+      I am thankful to Mr. D. RAJKUMAR, MCA., Assistant Professor and  Department of Master of Computer Application for his motivation and efforts to bring out the best in me to complete this project.
+     I am also very thankful to the Mr. M. MOHAMMAD  RIYAZ,  MCA.,  Assistant Professor, Department of  Master of Computer Applications for  his motivation and efforts to bring out the best in me.
+     I also express my thanks to all the staff members of the Department of MCA, TPGIT for their constant support and encouragement. I also express my thanks to all the non- teaching staff members for their support.
+     Finally,  I express my gratitude to my family members and friends for their constant support and encouragement.
+CHAPTER
+CONTENTS
+PAGE NO
+Abstract (English)
+Acknowledgement
+List  of Contents
+List  of Figures
+1
+INTRODUCTION
+2
+SYSTEM ANALYSIS
+2.1 Existing System
+2.2 Proposed system
+3
+DEVELOPMENT ENVIRONMENT
+3.1 Hardware Requirements
+3.2 Software Requirements
+3.3 Software Specifications
+           3.3.1FrontEnd
+     3.3.1.1  HTML
+   3.3.1.2  CSS
+   3.3.1.3  JAVASCRIPT
+                           3.3.2BackEnd
+       3.3.2.1 PYTHON
+         3.3.2.2 Framework
+              3.3.3.3 DATABASE
+‘
+SYSTEM DESIGN8
+                       Architecture Diagram                
+                      UML Diagram    
+                   Class Diagram
+                  Sequence Diagram
+                  Use case Diagram
+          ER Diagram
+MODULES12
+5.1Name of Modules
+                   5.1.1 Admin                                                                            
+                  5.1.2 Cultivator                                                                           
+                                                      5.1.3 Accumulator                                                                            
+                 5.1.4 Extractor                                                                            
+                 5.1.5 Sustainer                                                                            
+IMPLEMENTATIONS16
+                                  6.1  Coding
+TESTING48
+                                7.1 White Box Testing
+                                7.2 Black Box Testing
+                                7.3  Unit Testing
+8                                         APPENDICES
+                                 8.1  Screenshots
+CHAPTER 1
+INTRODUCTION
+The rapid depletion of conventional mineral resources and the increasing environmental damage caused by traditional mining methods have created an urgent need for sustainable and eco-friendly alternatives. Phytomining has emerged as a promising solution that utilizes plants to extract valuable metals from contaminated or mineral-rich soils. This biological approach not only enables metal recovery but also contributes to soil remediation, making it a dual-purpose technique for resource recovery and environmental protection.
+ PHYTOMINE is a secure, intelligent, and role-based digital platform designed to analyze, manage, and validate the entire phytomining process. The project integrates biological growth analysis, metal accumulation assessment, extraction efficiency evaluation, and environmental impact verification into a single unified system. By structuring the workflow into five dedicated modules—Admin, Cultivator, Accumulator, Extractor, and Sustainer—the platform ensures accountability, transparency, and sequential data processing at every stage. A key strength of the PHYTOMINE system lies in its admin-driven data governance, where all input values are uploaded, validated, and controlled exclusively by the administrator. This eliminates data ambiguity and ensures that all analytical outcomes are based on verified parameters. 
+To further enhance data security, sensitive information and intermediate reports are encrypted, and controlled key-based decryption is enforced between modules. The project also incorporates intelligent analytical techniques to evaluate system performance and environmental safety. Biological growth parameters, metal uptake efficiency, extraction recovery, and post-mining soil safety are systematically calculated and assessed using predefined formulas and machine learning-assisted analysis. This approach ensures accuracy, consistency, and scalability of the results while reducing manual errors. 
+Overall, PHYTOMINE bridges the gap between sustainable mining practices and modern computational technologies. By combining phytomining principles with secure data handling, modular role-based access, and intelligent analysis, the project provides a comprehensive framework for metal recovery while ensuring long-term environmental safety. 
+CHAPTER 2
+SYSTEM ANALYSIS
+2.1 EXISTING SYSTEM
+In the existing phytomining and  metal recovery practices, the analysis of plant growth, metal accumulation, extraction efficiency, and environmental impact is largely performed using manual calculations, isolated laboratory tools, or spreadsheet-based methods. These approaches lack a unified computational framework, making the overall process fragmented and difficult to validate across different stages of analysis.  Data collection in traditional systems is often decentralized and inconsistent, with values sourced from multiple experiments or assumed reference standards. As a result, there is no strict control over input validation, and calculations may vary depending on the researcher or analyst. This leads to inaccuracies, reproducibility issues, and increased dependency on human intervention. Most existing systems do not provide role-based modular access, meaning that all calculations are usually handled by a single entity or research group. There is no clear separation between growth analysis, accumulation analysis, extraction analysis, and environmental assessment, which reduces transparency and traceability in the phytomining workflow. 
+ Security is another major limitation in current systems. Experimental data and calculated results are commonly stored in plain formats without encryption, making them vulnerable to unauthorized access, modification, or data leakage. Additionally, there is no secure mechanism for controlled data sharing or validation between different stakeholders involved in the process.  Environmental impact assessment in existing methods is typically performed as a standalone post-analysis, without systematic integration into the overall metal recovery workflow. This makes it difficult to accurately evaluate soil safety and sustainability in relation to the extraction process. Furthermore, report generation is mostly manual, time-consuming, and prone to human error, with no automated mechanism for generating consolidated analytical reports. 
+Overall, the existing system lacks automation, security, modular structure, and integrated environmental assessment, which limits its effectiveness for scalable, reliable, and sustainable phytomining analysis.
+2.1.1 DISADVANTAGES
+Existing phytomining analysis systems rely heavily on manual and spreadsheet-based calculations, which increases the likelihood of computational errors and reduces result consistency across different analysis stages.
+Most current systems lack a standardized data validation mechanism, making it difficult to verify the scientific accuracy and uniformity of input values used throughout the phytomining process.
+The phytomining workflow is often fragmented, with plant growth analysis, metal uptake estimation, extraction efficiency, and environmental impact assessment handled as independent processes, limiting integration and traceability.
+Data security and confidentiality are major concerns, as experimental data and analytical results are frequently stored in unprotected formats without encryption or access control mechanisms.
+The lack of automation in report generation and result consolidation makes documentation labor-intensive and prone to human error.
+Overall, existing systems suffer from limited automation, scalability, security, and standardization, making them unsuitable for large-scale, reliable, and sustainable phytomining application
+2.2 PROPOSED SYSTEM
+The proposed PHYTOMINE system introduces a secure, modular, and fully automated web-based platform for performing end-to-end phytomining analysis with a strong focus on accuracy, traceability, and environmental sustainability. Unlike traditional approaches, this system centralizes all input validation and computational processes, ensuring consistency and reliability across every stage of the workflow. 
+In the proposed system, the Admin module acts as the single trusted source of input data. All required parameters such as biomass values, metal concentrations, extraction efficiency, and soil limits are uploaded and validated by the administrator The system is designed with a five-module architecture—Admin, Cultivator, Accumulator, Extractor, and Sustainer—where each module performs a well-defined role. Every module becomes operational only after admin approval, enforcing strict workflow sequencing and access control. This structured progression ensures that calculations are performed in the correct order and that intermediate results are properly validated before moving forward.
+To enhance data security, the proposed system implements encryption-based data sharing and key-controlled decryption between modules. Sensitive values and reports are stored in encrypted form and can be accessed only through authorized keys issued by the system. This prevents unauthorized access, protects experimental data, and maintains data integrity throughout the project lifecycle.
+ Each module performs automated scientific calculations relevant to its function. The Cultivator module evaluates plant growth metrics, the Accumulator module analyzes metal uptake and bioaccumulation, the Extractor module calculates recovered metal and extraction loss, and the Sustainer module assesses environmental safety using clustering-based analysis. By integrating algorithm-driven analysis, the system reduces human error and improves result consistency.Finally, the proposed system supports automated report generation, compiling results from all modules into a comprehensive PDF report. This enables easy documentation, auditability, and decision-making.
+Overall, the PHYTOMINE proposed system delivers a reliable, secure, and scalable solution for sustainable phytomining analysis by combining validated inputs, modular processing, encryption, and intelligent environmental assessment.
+2.2.1 ADVANTAGES:
+Centralized and Validated Data Input: All critical input parameters are uploaded and verified by the Admin module, ensuring data consistency and eliminating errors caused by unverified or assumed inputs.
+Modular and Structured Workflow: The system follows a well-defined five-module architecture, where each module performs a specific task in sequence, improving clarity, maintainability, and process control.
+Enhanced Data Security through Encryption: Sensitive data and reports are stored in encrypted form and accessed only using authorized decryption keys, preventing unauthorized access and data leakage.
+Automated Scientific Calculations: Growth analysis, metal accumulation, extraction recovery, and environmental assessment are automatically computed using predefined formulas and algorithms, reducing manual effort and human error.
+Role-Based Access Control: Each user can access only their assigned module, ensuring operational discipline and preventing accidental or malicious data modification.
+CHAPTER 3
+DEVELOPMENT ENVIRONMENT
+3.1 HARDWARE REQUIREMENTS:
+Processor                 : Intel i5 core
+Speed                       : 1.6 GHz and Above
+RAM                       : 8 GB and Above
+Hard Disk                : 120 GB
+Monitor                   : 15’’ LED SVGA
+3.2 SOFTWARE REQUIREMENTS:
+Operating system     : Windows 
+Front-End                 : HTML,CSS, JAVASCRIPT
+Back-End                 : PYTHON
+IDE                         : Visual Studio code
+Database                        : MySQL
+3.3 SOFTWARE SPECIFICATIONS
+3.3.1 Front-End 
+             3.3.1.1  HTML
+          Hypertext Markup Language (HTML), the languages of the World Wide Web (WWW), allows users to produce web pages that included text, graphics and pointer to other web pages (Hyperlinks).
+        HTML is not a programming language, but it is an application of ISO Standard 8879, SGML (Standard Generalized Markup Language), but Specialized to hypertext and adapted to the Web. The idea behind Hypertext one point to another point. We can navigate through the information based on out interest and preference. A markup language is simply a series of items enclosed within the elements should be displayed. Hyperlinks are underlined or emphasized works that load to other documents or some portions of the same document.
+      3.3.1.2 CSS       
+                 CSS (Cascading Style Sheets) is a stylesheet language used to control the presentation and layout of web pages. While HTML structures the content of a webpage, CSS is responsible for its visual appearance, including colors, fonts, spacing, positioning, and responsive design. CSS plays a crucial role in frontend development by enhancing user experience and ensuring consistent design across web applications.
+  3.3.1.3 JAVA SCRIPT
+            JavaScript is a compact, object-based scripting language for developing client and server internet applications. Netscape Navigator 2.0 interprets JavaScript statements embedded directly in an HTML page. And Livewire enables you to create server-based applications similar to common gateway interface (CGI) programs.In a client application for Navigator, JavaScript statements embedded in an HTML Page can recognize and respond to user events such as mouse clicks form input, and page navigation.
+      
+3.2 Back-End
+3.2.1 Introduction to Python:
+What is Python?
+               Python is an interpreted, high-level, general-purpose programming language. It is dynamically typed and collected. Python is developed by Guido van Rossum. Guido van Rossum started implementing Python in 1989. Python is a facile programming language so even if you are new to programming, you can learn python without facing any issues. Python is an interpreted language and not a compiled one, although compilation is a step. Python code, written in .py file is first compiled to what is called byte code which is stored with a .pyc or .pyo format. Instead of translating source code to machine code like C++, Python code it translated to byte code. This byte code is a low-level set of instructions that can be executed by an interpreter.  One popular advantage of interpreted languages is that they are platform-independent. As long as the Python byte code and the Virtual Machine have the same version, Python byte code can be executed on any platform (Windows, MacOS, etc.). Dynamic typing is another advantage. In static-typed languages like C++, you have to declare the variable type and any discrepancy like adding a string and an integer is checked during compile time. In older programming languages, memory allocation was quite manual. Many times when you use variables that are no longer in use or referenced anywhere else in the program, they need to be cleaned from the memory. Garbage Collector does that for you.
+3.2 2 Django:
+Django sometimes stylized as django is a Python-based free and open-source web framework that follows the model-template-views (MTV) architectural pattern. It is maintained by the Django Software Foundation (DSF), an American independent organization established as non-profit.Django's primary goal is to ease the creation of complex, database-driven websites. The framework emphasizes reusability  of components, less code, low coupling, rapid development, and the principle of yourself. Python is used throughout, even for settings, files, and data models. Django also provides an optional administrative create, read, update and delete interface that is generated dynamically through introspection and configured via admin models. 
+ It consists of an object-relational mapper (ORM) that mediates between data models (defined as Python classes) and a relational database ("Model"), a system for processing HTTP requests with a web templating system ("View"), and a regular-expression-based URL dispatcher ("Controller")
+3.3 Database 
+MySQL is an open-source relational database management system (RDBMS) used to store, manage, and retrieve structured data efficiently. It is based on Structured Query Language (SQL), which is used to perform operations such as inserting, updating, deleting, and retrieving data from databases.
+MySQL is widely used in web development and is a key component of the LAMP stack (Linux, Apache, MySQL, PHP/Python/Perl). It is known for its reliability, performance, scalability, and ease of use.
+Features of MySQL
+Open Source: Free to use and supported by a large community.
+Relational Database: Stores data in tables with rows and columns.
+High Performance: Optimized for fast data processing.
+Security: Provides user authentication and access control.
+Scalability: Suitable for small applications as well as large enterprise systems.
+Cross-Platform Support: Works on Windows, Linux, and macOS.
+CHAPTER 4
+     SYSTEM DESIGN
+  ARCHITECTURE DIAGRAM
+Fig 4.1 Architecture diagram
+4.2  UML DIAGRAM
+4.2.1 Activity Diagram
+Fig 4.2 Activity Diagram
+4.2.2  CLASS DIAGRAM
+Fig 4.3 Class Diagram
+4.2.3 USE CASE DIAGRAM
+Fig 4.4 Usecase Diagram
+4.2.4 ER diagram
+Fig 4.5 ER diagram
+CHAPTER 5
+MODULE DESCRIPTION
+5.1 MODULES
+Admin
+Cultivator
+Accumulator
+Extractor
+Sustainer
+5.1.1 ADMIN:
+The Admin Module acts as the central control unit of the PHYTOMINE platform. This module is responsible for initializing, validating, and governing the entire phytomining workflow. The admin first logs into the system and uploads all mandatory input parameters such as fern biomass values, soil REE concentrations, extraction efficiency, and soil limits. These uploaded values serve as the only source of data for all subsequent modules, ensuring accuracy and consistency throughout the system. Without admin input, no other module is permitted to function, making this module compulsory. In addition to data provisioning, the admin manages user registrations for the Cultivator, Accumulator, Extractor, and Sustainer modules by approving or rejecting requests. The admin also monitors the progress of each module by reviewing encrypted reports generate data every stage. Once all modules complete their respective analyses, the admin compiles and generates a comprehensive final PDF report, which summarizes growth performance, metal accumulation, extraction efficiency, and environmental safety outcomes.
+5.1.2 CULTIVATOR
+The Cultivator Module focuses onanalyzing ferngrowthperformance, which is a critical factor in phytomining success. After registering and receiving approval from the admin, the cultivator receives login credentials via email. Upon login, the cultivator can view the admin- uploaded input values, which are displayed in encrypted form to ensure data confidentiality.
+By requesting a decryption key, the cultivator securely accesses the values required for computation. Using the decrypted inputs, this module calculates key biological growth parameters such as Biomass Increase, Growth Rate, and Growth Efficiency. These metrics provide insight into how effectively the plant has grown under given conditions and directly influence metal accumulation potential. After completing the calculations, the cultivator generates a report and securely logs out, passing the processed data to the next module.
+5.1.3 ACCUMULATOR
+The Accumulator Module evaluates the metal accumulation capability of the plant, which is the core objective of phytomining. Similar to the cultivator process, the accumulator registers, awaits admin approval, and logs in using credentials sent via email. This module receives encrypted reports from the Cultivator Module and must obtain a decryption key to access them. Once decrypted, the accumulator calculates important accumulation metrics including Total Metal Content, Uptake Percentage, and Bioaccumulation Factor (BAF). These values quantify how efficiently the plant absorbs rare earth elements from the soil. The calculated results confirm whether the phytomining process is effective.  After analysis, the accumulator generates a secured report and exits the system.
+5.1.4 EXTRACTOR
+The Extractor Module is responsible for evaluating the metal recovery phase of phytomining. Following registration approval and secure login, the extractor accesses encrypted accumulation reports produced by the previous module. With proper authorization and decryption keys, the extractor retrieves the necessary values for further analysis. This module calculates Recovered Metal, Extraction Loss, and Recovery Percentage, which represent the efficiency of extracting usable metal from plant biomass. These calculations ensure that accumulated metals are not merely stored in plants but are successfully converted into recoverable resources. The results are recorded in a report and securely forwarded for environmental assessment.
+5.1.5 SUSTAINER
+The Sustainer Module assesses the environmental impact and sustainability of the phytomining process. After admin approval and secure login, the sustainer accesses encrypted reports from earlier modules. Upon decryption, this module evaluates post-mining soil condition store ensure ecological safety. Using calculated and dataset-assisted analysis, the module determines Soil Metal Reduction Percentage, Safety Index, and Environmental Status. A clustering-based approach such as K-Means is employed to categorize soil conditions as safe or unsafe based on predefined thresholds. This ensures that phytomining does not compromise environmental health. Once the analysis is completed, the sustainer submits the final report, enabling the admin to generate the overall system report.
+CHAPTER 6
+                                 IMPLEMENTATION
+6.1 IMPLEMENTATION
+                -Project Implementation is the phase where the planned system is developed, tested, and deployed into a real working environment. In this stage, all project requirements, designs, and plans are transformed into an actual functional system. It ensures that the developed application meets user needs and works efficiently.
+  Implementation transforms the theoretical design into a functioning system, critical for ensuring effective operation .  This stage involves planning, system setup, user training and system evaluation. Proper planning includes incorporate all the key requirements into reality.
+The implementation ensures smooth data flow from Admin → Cultivator → Accumulator → Extractor → Sustainer, with reports sent back to Admin at each stage. Proper authentication and database management ensure security and reliability of the system. 
+6.2 CODING
+6.2.1 ADMIN:
+from django.shortcuts import render, redirect
+from .models import *
+from django.contrib import messages
+from django.core.mail import send_mail
+# Create your views here.
+def home(request):
+    return render(request,"home/home.html")
+def admins_login(request):
+    if request.method == "POST":
+        try:
+            email=request.POST['email']
+            password=request.POST['password']
+            if email=="admin@gmail.com" and password=="admin":
+                messages.info(request,"Admin Login Successful")
+                return redirect("/admins_home/")
+            elif email !="admin@gmail.com" and password=="admin":
+                messages.error(request, "Incorrect email!")
+                return render(request,"admins/admins_login.html")
+            elif email =="admin@gmail.com" and password!="admin":
+                messages.error(request, "Incorrect Password!")
+                return render(request,"admins/admins_login.html")
+            elif email !="admin@gmail.com" and password!="admin":
+                messages.error(request, "Incorrect email and Password!")
+                return render(request,"admins/admins_login.html")
+            else:
+                return render(request,"admins/admins_login.html")
+        except:
+            messages.error(request, "Incorrect Credentials!")
+    return render(request,"admins/admins_login.html")
+import random
+def accept(request,id):
+    data=registration.objects.get(id=id)
+    password=random.randint(10000,99999)
+    rh_id=random.randint(1000,9999)
+    
+    data.password=password
+    data.rh_id=f"ID:{rh_id}"
+    data.save()
+    send_mail(
+        '{0}: Login Credentials'.format(data.department),
+        'Hello {0},\n\n'
+        'We are glad to inform you that your **{1} module profile has been approved successfully**.\n\n'
+        'Here are your login details:\n'
+        '• Username: "{2}"\n'
+        '• Password: "{3}"\n\n'
+        'Please use these credentials to access the **{4} Portal**. Make sure to keep this information confidential and do not share it with anyone.\n\n'
+        'If you have any questions or face any issues while logging in, feel free to contact the support team.\n\n'
+        'Thank you,\n'
+        'Admin Team'
+        .format(data.name, data.department, data.email, data.password, data.department.capitalize()),
+        'demosample47@gmail.com',
+        [data.email],
+        fail_silently=False,
+    )
+    data.accept=True
+    data.reject=False
+    data.save()
+    messages.info(request,f"{data.rh_id} : {data.department} Approval Successful")
+    return redirect("/admins_home/")
+def reject(request,id):
+    data = registration.objects.get(id=id)
+    data.accept=False
+    data.reject=True
+    data.save()
+    subject = 'Rejection Mail'
+    plain_message = (
+    f"Hello {data.name},\n\n"
+    f"We regret to inform you that your registration has been **rejected** due to certain issues in the submitted details.\n"
+    f"Please review your information and try submitting again at a later time.\n\n"
+    f"If you need assistance or clarification, feel free to reach out to the support team.\n\n"
+    f"Thank you for your understanding."
+)
+    send_mail(subject, plain_message, 'demosample47@gmail.com', [data.email], fail_silently=False)
+    # data.delete()
+    messages.info(request, "Rejection Mail Sent")
+    return redirect("/admins_home/")
+def admins_home(request):
+    return render (request, 'admins/admins_home.html')
+def admins_logout(request):
+    messages.info(request,"Admin Logout Successful")
+    return redirect("/")
+def cul_approve(request):
+    data=registration.objects.filter(department="CULTIVATOR")
+    return render(request,"admins/cul_approve.html",{'data':data})
+def acc_approve(request):
+    data=registration.objects.filter(department="ACCUMULATOR")
+    return render(request,"admins/acc_approve.html",{'data':data})
+def ext_approve(request):
+    data=registration.objects.filter(department="EXTRACTOR")
+    return render(request,"admins/ext_approve.html",{'data':data})
+def sus_approve(request):
+    data=registration.objects.filter(department="SUSTAINER")
+    return render(request,"admins/sus_approve.html",{'data':data})
+def admins_req(request):
+    if request.method == "POST":
+        initial_fern_biomass=request.POST.get("initial_fern_biomass")
+        final_fern_biomass=request.POST.get("final_fern_biomass")
+        growth_duration=request.POST.get("growth_duration") 
+        soil_ree_conc=request.POST.get("soil_ree_conc")       
+        plant_ree_conc=request.POST.get("plant_ree_conc")       
+        harvested_biomass=request.POST.get("harvested_biomass")       
+        extraction_eff=request.POST.get("extraction_eff")       
+        initial_soil_ree=request.POST.get("initial_soil_ree")
+        final_soil_ree=request.POST.get("final_soil_ree")
+        project_id=random.randint(10000,99999)
+        phytomine(initial_fern_biomass=initial_fern_biomass, final_fern_biomass=final_fern_biomass, growth_duration=growth_duration,
+                     soil_ree_conc=soil_ree_conc,plant_ree_conc=plant_ree_conc,harvested_biomass=harvested_biomass,extraction_eff=extraction_eff,
+                     initial_soil_ree=initial_soil_ree,final_soil_ree=final_soil_ree,
+                     project_id=project_id).save()
+        messages.info(request,"Requirements Submitted Successfully")
+        return redirect('/admins_req/')
+    else:
+        return render(request, "admins/admins_req.html")
+    
+def admins_status(request):
+    data=phytomine.objects.all()
+    return render (request,"admins/admins_status.html",{'data':data})
+def rep_cul(request):
+    data=phytomine.objects.all()
+    return render (request,"admins/rep_cul.html",{'data':data})
+def rep_acc(request):
+    data=phytomine.objects.all()
+    return render (request,"admins/rep_acc.html",{'data':data})
+def rep_ext(request):
+    data=phytomine.objects.all()
+    return render (request,"admins/rep_ext.html",{'data':data})
+def rep_sus(request):
+    data=phytomine.objects.all()
+    return render (request,"admins/rep_sus.html",{'data':data})
+from io import BytesIO
+from django.core.files.base import ContentFile
+from django.shortcuts import redirect, HttpResponse
+from django.contrib import messages
+from reportlab.lib.pagesizes import A4
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, PageBreak
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib import colors
+def phytomine_generate_pdf(request, project_id):
+    user = phytomine.objects.get(project_id=project_id)
+    title = "PHYTOMINE FINAL REPORT"
+    client_info = [
+        ["PROJECT ID", user.project_id],
+    ]
+    sections = {
+        "ADMIN:": [
+            ["INITIAL FERN BIOMASS (g)", str(user.initial_fern_biomass)],
+            ["FINAL FERN BIOMASS (g)", str(user.final_fern_biomass)],
+            ["GROWTH DURATION (days)", str(user.growth_duration)],
+            ["SOIL REE CONCENTRATION (mg/kg)", str(user.soil_ree_conc)],
+            ["PLANT REE CONCENTRATION (mg/kg)", str(user.plant_ree_conc)],
+            ["HARVESTED BIOMASS (g)", str(user.harvested_biomass)],
+            ["EXTRACTION EFFICIENCY (%)", str(user.extraction_eff)],
+            ["INITIAL SOIL REE (mg/kg)", str(user.initial_soil_ree)],
+            ["FINAL SOIL REE (mg/kg)", str(user.final_soil_ree)],
+        ],
+        "CULTIVATOR:": [
+            ["BIOMASS INCREASE (g)", str(user.biomass_increase)],
+            ["GROWTH RATE (g/day)", str(user.growth_rate)],
+            ["GROWTH EFFICIENCY (%)", str(user.growth_eff)],
+        ],
+        "ACCUMULATOR:": [
+            ["TOTAL METAL (mg)", str(user.total_metal)],
+            ["UPTAKE (%)", str(user.uptake)],
+            ["BAF", str(user.baf)],
+        ],
+        "EXTRACTOR:": [
+            ["RECOVERED METAL (mg)", str(user.recovered_metal)],
+            ["EXTRACTION LOSS (mg)", str(user.loss)],
+            ["RECOVERY PERCENTAGE (%)", str(user.recovery)],
+        ],
+        "SUSTAINER:": [
+            ["SOIL METAL REDUCTION (%)", str(user.reduction)],
+            ["SAFETY INDEX", str(user.safety_index)],
+            ["ENVIRONMENTAL STATUS", str(user.env_status)],
+        ],
+    }
+    buffer = BytesIO()
+    doc = SimpleDocTemplate(buffer, pagesize=A4)
+    story = []
+    styles = getSampleStyleSheet()
+    # 🌿 Title style
+    title_style = ParagraphStyle(
+        name="CustomTitle",
+        fontSize=18,
+        leading=22,
+        alignment=1,  # Center
+        textColor=colors.HexColor("#eb1616"),  # Deep forest blue
+        spaceAfter=20
+    )
+    title_para = Paragraph(title, title_style)
+    story.append(title_para)
+    # ✅ Color scheme
+    header_bg = colors.HexColor("#eb1616")       # Medium Sea Green
+    header_text = colors.white                  # White for text
+    cell_bg = colors.HexColor("#F0FFF0")         # Honeydew
+    section_heading_color = colors.HexColor("#eb1616")  # Dark Green
+    # 🧾 Client info table
+    client_info_table = Table(client_info, colWidths=[200, 250])
+    client_info_table.setStyle(
+        TableStyle([
+            ("ALIGN", (0, 0), (-1, -1), "CENTER"),
+            ("FONTNAME", (0, 0), (-1, -1), "Helvetica-Bold"),
+            ("FONTSIZE", (0, 0), (-1, -1), 10),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 12),
+            ("BACKGROUND", (0, 0), (-1, -1), colors.lightgrey),
+            ("GRID", (0, 0), (-1, -1), 0.5, colors.black),
+        ])
+    )
+    story.append(client_info_table)
+    story.append(Spacer(1, 20))
+    # 📊 Each section table
+    for section, data in sections.items():
+        # Force new page if needed
+        if section == "RELEASE:":
+            story.append(PageBreak())
+        section_title = Paragraph(
+            f"<font color='{section_heading_color}'><b>{section}</b></font>",
+            styles["Heading2"]
+        )
+        story.append(section_title)
+        story.append(Spacer(1, 6))
+        table_data = [["Title", "Value"]] + data
+        table = Table(table_data, colWidths=[200, 250])
+        table.setStyle(
+            TableStyle([
+                ("BACKGROUND", (0, 0), (-1, 0), header_bg),
+                ("TEXTCOLOR", (0, 0), (-1, 0), header_text),
+                ("ALIGN", (0, 0), (-1, -1), "CENTER"),
+                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+                ("FONTSIZE", (0, 0), (-1, -1), 10),
+                ("BOTTOMPADDING", (0, 0), (-1, 0), 12),
+                ("BACKGROUND", (0, 1), (-1, -1), cell_bg),
+                ("GRID", (0, 0), (-1, -1), 0.5, colors.black),
+            ])
+        )
+        story.append(table)
+        story.append(Spacer(1, 20))
+    # 🧱 Build the PDF
+    doc.build(story)
+    pdf_data = buffer.getvalue()
+    buffer.close()
+    user.admins_f_report.save(f"{title}_{user.project_id}.pdf", ContentFile(pdf_data))
+    user.admins_f_rep_view = True
+    user.save()
+    response = HttpResponse(content_type="application/pdf")
+    response["Content-Disposition"] = f'attachment; filename="{title}_{user.project_id}.pdf"'
+    response.write(pdf_data)
+    messages.info(request, f"Report for {user.project_id} Generated Successfully")
+    return redirect("/admins_status/")
+6.2.2 CULTIVATOR:
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.core.mail import send_mail
+from admins.models import *
+# Create your views here.
+def cul_home(request):
+    return render(request,'cul/cul_home.html')
+def cul_login(request):
+    return render(request,'cul/cul_login.html')
+def cul_reg(request):
+    if request.method =='POST':
+        name=request.POST['name']
+        email=request.POST['email']
+        mobile_no=request.POST['mobile_no']
+        department=request.POST['department']
+        registration(name=name,email=email,mobile_no=mobile_no,department=department).save()
+        messages.info(request,"CULTIVATOR Registration successful")
+        return redirect('/cul_reg/')
+    else:
+        return render(request,"cul/cul_login.html")
+    
+def cul_validate_login(request):
+    if request.method=='POST':
+        
+        email = request.POST['email']
+        password = request.POST['password']
+        try:        
+            data = registration.objects.get(email=email, password=password, department="CULTIVATOR")
+            if data.accept:   
+                data.login = True
+                data.logout = False
+                data.save()
+                # Store all three safely
+                request.session['user_id'] = data.id
+                request.session['email'] = data.email
+                request.session['department'] = data.department
+                messages.info(request, "CULTIVATOR Login Successful")     
+                return redirect("/cul_home/")
+            else:
+                messages.info(request, "Wrong Credentials")
+                return redirect("/cul_login/")
+        except:
+            messages.info(request, "Wrong Credentials")
+            return redirect("/cul_login/")
+    return render(request, "cul/cul_login.html")
+def cul_logout(request):
+    user_id = request.session.get('user_id')
+    email = request.session.get('email')
+    department = request.session.get('department')
+    if user_id and department:
+        
+        try:
+            data = registration.objects.get(id=user_id, department=department, email=email)
+            data.login = False
+            data.logout = True
+            
+            data.save()
+        except registration.DoesNotExist:
+            
+            pass
+    # Clear all session data
+    request.session.flush()
+    messages.info (request,"CULTIVATOR Logout Successfull")
+    return redirect("/")
+from django.shortcuts import get_object_or_404, render, redirect
+from django.core.mail import send_mail
+from django.contrib import messages
+from .crypto_utils import encrypt_data, decrypt_data, generate_token, verify_token
+def cul_req(request):
+    data = phytomine.objects.all()
+    for item in data:
+        if not item.e_initial_fern_biomass:
+            item.e_initial_fern_biomass = encrypt_data(str(item.initial_fern_biomass or ""))
+        if not item.e_final_fern_biomass:
+            item.e_final_fern_biomass = encrypt_data(str(item.final_fern_biomass or ""))
+        if not item.e_growth_duration:
+            item.e_growth_duration = encrypt_data(str(item.growth_duration or ""))
+        if not item.e_soil_ree_conc:
+            item.e_soil_ree_conc = encrypt_data(str(item.soil_ree_conc or ""))
+        if not item.e_plant_ree_conc:
+            item.e_plant_ree_conc = encrypt_data(str(item.plant_ree_conc or ""))
+        if not item.e_harvested_biomass:
+            item.e_harvested_biomass = encrypt_data(str(item.harvested_biomass or ""))
+        if not item.e_extraction_eff:
+            item.e_extraction_eff = encrypt_data(str(item.extraction_eff or ""))
+        if not item.e_initial_soil_ree:
+            item.e_initial_soil_ree = encrypt_data(str(item.initial_soil_ree or ""))
+        if not item.e_final_soil_ree:
+            item.e_final_soil_ree = encrypt_data(str(item.final_soil_ree or ""))
+        item.save()
+    return render(request, "cul/cul_req.html", {"data": data})
+def getkey_cul(request, project_id):
+    data = get_object_or_404(phytomine, project_id=project_id)
+    reg_obj = get_object_or_404(registration, login=True, logout=False, department="CULTIVATOR")
+    token = generate_token(data.pk)
+    data.cul_decrypt_key = token
+    data.cul_get_key = True
+    data.save()
+    send_mail(
+        "CULTIVATOR: Secure Decryption Token",
+        f"Project ID: {data.project_id}\n\nYour Secure Token:\n{token}",
+        "your_email@example.com",
+        [reg_obj.email],
+        fail_silently=False,
+    )
+    messages.success(request, "Secure decryption key sent successfully")
+    return redirect("/cul_req/")
+def decrypt_cul(request, project_id):
+    d = get_object_or_404(phytomine, project_id=project_id)
+    if request.method == "POST":
+        token = request.POST.get("decryption_key", "").strip()
+        try:
+            if verify_token(token, d.pk):
+                d.cul_decrypt = True
+                d.save()
+                messages.success(request, f"{project_id}: Decryption Verified ✅")
+            else:
+                messages.error(request, f"{project_id}: Invalid or Expired Token ❌")
+        except Exception as e:
+            messages.error(request, f"Error: {str(e)}")
+    return redirect("/cul_req/")
+def cul_ana(request):
+    data = phytomine.objects.all()
+    return render(request, "cul/cul_ana.html", {"data": data})
+def cul_ana_process(request, project_id):
+    data= phytomine.objects.get(project_id=project_id)
+    biomass_increase = data.final_fern_biomass - data.initial_fern_biomass
+    growth_rate = biomass_increase / data.growth_duration
+    growth_eff = (biomass_increase / data.final_fern_biomass) * 100
+    data.biomass_increase = round(biomass_increase, 3)
+    data.growth_rate = round(growth_rate, 3)
+    data.growth_eff = round(growth_eff, 3)
+    data.cul_scan = True
+    data.status = "CULTIVATOR Analysis Completed"
+    data.save()
+    messages.info(request,"CULTIVATOR Analysis Completed")
+    return redirect("/cul_ana/")
+def cul_rep(request):
+    data = phytomine.objects.all()
+    return render(request, "cul/cul_rep.html", {"data": data})
+6.2.3 ACCUMULATOR:
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.core.mail import send_mail
+from admins.models import *
+# Create your views here.
+def acc_home(request):
+    return render(request,'acc/acc_home.html')
+def acc_login(request):
+    return render(request,'acc/acc_login.html')
+def acc_reg(request):
+    if request.method =='POST':
+        name=request.POST['name']
+        email=request.POST['email']
+        mobile_no=request.POST['mobile_no']
+        department=request.POST['department']
+        registration(name=name,email=email,mobile_no=mobile_no,department=department).save()
+        messages.info(request,"ACCUMULATOR Registration successful")
+        return redirect('/acc_reg/')
+    else:
+        return render(request,"acc/acc_login.html")
+    
+def acc_validate_login(request):
+    if request.method=='POST':
+        
+        email = request.POST['email']
+        password = request.POST['password']
+        try:        
+            data = registration.objects.get(email=email, password=password, department="ACCUMULATOR")
+            if data.accept:   
+                data.login = True
+                data.logout = False
+                data.save()
+                # Store all three safely
+                request.session['user_id'] = data.id
+                request.session['email'] = data.email
+                request.session['department'] = data.department
+                messages.info(request, "ACCUMULATOR Login Successful")     
+                return redirect("/acc_home/")
+            else:
+                messages.info(request, "Wrong Credentials")
+                return redirect("/acc_login/")
+        except:
+            messages.info(request, "Wrong Credentials")
+            return redirect("/acc_login/")
+    return render(request, "acc/acc_login.html")
+def acc_logout(request):
+    user_id = request.session.get('user_id')
+    email = request.session.get('email')
+    department = request.session.get('department')
+    if user_id and department:
+        
+        try:
+            data = registration.objects.get(id=user_id, department=department, email=email)
+            data.login = False
+            data.logout = True
+            
+            data.save()
+        except registration.DoesNotExist:
+            
+            pass
+    # Clear all session data
+    request.session.flush()
+    messages.info (request,"ACCUMULATOR Logout Successfull")
+    return redirect("/")
+from django.shortcuts import get_object_or_404, render, redirect
+from django.core.mail import send_mail
+from django.contrib import messages
+from .crypto_utils import encrypt_data, decrypt_data, generate_token, verify_token
+def acc_req(request):
+    data = phytomine.objects.all()
+    for item in data:
+        if not item.e_initial_fern_biomass:
+            item.e_initial_fern_biomass = encrypt_data(str(item.initial_fern_biomass or ""))
+        if not item.e_final_fern_biomass:
+            item.e_final_fern_biomass = encrypt_data(str(item.final_fern_biomass or ""))
+        if not item.e_growth_duration:
+            item.e_growth_duration = encrypt_data(str(item.growth_duration or ""))
+        if not item.e_soil_ree_conc:
+            item.e_soil_ree_conc = encrypt_data(str(item.soil_ree_conc or ""))
+        if not item.e_plant_ree_conc:
+            item.e_plant_ree_conc = encrypt_data(str(item.plant_ree_conc or ""))
+        if not item.e_harvested_biomass:
+            item.e_harvested_biomass = encrypt_data(str(item.harvested_biomass or ""))
+        if not item.e_extraction_eff:
+            item.e_extraction_eff = encrypt_data(str(item.extraction_eff or ""))
+        if not item.e_initial_soil_ree:
+            item.e_initial_soil_ree = encrypt_data(str(item.initial_soil_ree or ""))
+        if not item.e_final_soil_ree:
+            item.e_final_soil_ree = encrypt_data(str(item.final_soil_ree or ""))
+        if not item.e_biomass_increase:
+            item.e_biomass_increase = encrypt_data(str(item.biomass_increase or ""))
+        if not item.e_growth_rate:
+            item.e_growth_rate = encrypt_data(str(item.growth_rate or ""))
+        if not item.e_growth_eff:
+            item.e_growth_eff = encrypt_data(str(item.growth_eff or ""))
+        item.save()
+    return render(request, "acc/acc_req.html", {"data": data})
+def getkey_acc(request, project_id):
+    data = get_object_or_404(phytomine, project_id=project_id)
+    reg_obj = get_object_or_404(registration, login=True, logout=False, department="ACCUMULATOR")
+    token = generate_token(data.pk)
+    data.acc_decrypt_key = token
+    data.acc_get_key = True
+    data.save()
+    send_mail(
+        "ACCUMULATOR: Secure Decryption Token",
+        f"Project ID: {data.project_id}\n\nYour Secure Token:\n{token}",
+        "your_email@example.com",
+        [reg_obj.email],
+        fail_silently=False,
+    )
+    messages.success(request, "Secure decryption key sent successfully")
+    return redirect("/acc_req/")
+def decrypt_acc(request, project_id):
+    d = get_object_or_404(phytomine, project_id=project_id)
+    if request.method == "POST":
+        token = request.POST.get("decryption_key", "").strip()
+        try:
+            if verify_token(token, d.pk):
+                d.acc_decrypt = True
+                d.save()
+                messages.success(request, f"{project_id}: Decryption Verified ✅")
+            else:
+                messages.error(request, f"{project_id}: Invalid or Expired Token ❌")
+        except Exception as e:
+            messages.error(request, f"Error: {str(e)}")
+    return redirect("/acc_req/")
+def acc_ana(request):
+    data = phytomine.objects.all()
+    return render(request, "acc/acc_ana.html", {"data": data})
+def acc_ana_process(request, project_id):
+    data= phytomine.objects.get(project_id=project_id)
+    total_metal = ((data.plant_ree_conc * data.harvested_biomass) / 1000)
+    uptake = (data.plant_ree_conc / data.soil_ree_conc) * 100
+    baf = (data.plant_ree_conc / data.soil_ree_conc)
+    data.total_metal = round(total_metal, 3)
+    data.uptake = round(uptake, 3)
+    data.baf = round(baf, 3)
+    data.acc_scan = True
+    data.status = "ACCUMULATOR Analysis Completed"
+    data.save() 
+    messages.info(request,"ACCUMULATOR Analysis Completed")
+    return redirect("/acc_ana/")
+def acc_rep(request):
+    data = phytomine.objects.all()
+    return render(request, "acc/acc_rep.html", {"data": data})
+6.2.4 EXTRACTOR:
+rom django.shortcuts import render, redirect
+from django.contrib import messages
+from django.core.mail import send_mail
+from admins.models import *
+# Create your views here.
+def ext_home(request):
+    return render(request,'ext/ext_home.html')
+def ext_login(request):
+    return render(request,'ext/ext_login.html')
+def ext_reg(request):
+    if request.method =='POST':
+        name=request.POST['name']
+        email=request.POST['email']
+        mobile_no=request.POST['mobile_no']
+        department=request.POST['department']
+        registration(name=name,email=email,mobile_no=mobile_no,department=department).save()
+        messages.info(request,"EXTRACTOR Registration successful")
+        return redirect('/ext_reg/')
+    else:
+        return render(request,"ext/ext_login.html")
+    
+def ext_validate_login(request):
+    if request.method=='POST':
+        
+        email = request.POST['email']
+        password = request.POST['password']
+        try:        
+            data = registration.objects.get(email=email, password=password, department="EXTRACTOR")
+            if data.accept:   
+                data.login = True
+                data.logout = False
+                data.save()
+                # Store all three safely
+                request.session['user_id'] = data.id
+                request.session['email'] = data.email
+                request.session['department'] = data.department
+                messages.info(request, "EXTRACTOR Login Successful")     
+                return redirect("/ext_home/")
+            else:
+                messages.info(request, "Wrong Credentials")
+                return redirect("/ext_login/")
+        except:
+            messages.info(request, "Wrong Credentials")
+            return redirect("/ext_login/")
+    return render(request, "ext/ext_login.html")
+def ext_logout(request):
+    user_id = request.session.get('user_id')
+    email = request.session.get('email')
+    department = request.session.get('department')
+    if user_id and department:
+        
+        try:
+            data = registration.objects.get(id=user_id, department=department, email=email)
+            data.login = False
+            data.logout = True
+            
+            data.save()
+        except registration.DoesNotExist:
+            
+            pass
+    # Clear all session data
+    request.session.flush()
+    messages.info (request,"EXTRACTOR Logout Successfull")
+    return redirect("/")
+from django.shortcuts import get_object_or_404, render, redirect
+from django.core.mail import send_mail
+from django.contrib import messages
+from .crypto_utils import encrypt_data, decrypt_data, generate_token, verify_token
+def ext_req(request):
+    data = phytomine.objects.all()
+    for item in data:
+        if not item.e_initial_fern_biomass:
+            item.e_initial_fern_biomass = encrypt_data(str(item.initial_fern_biomass or ""))
+        if not item.e_final_fern_biomass:
+            item.e_final_fern_biomass = encrypt_data(str(item.final_fern_biomass or ""))
+        if not item.e_growth_duration:
+            item.e_growth_duration = encrypt_data(str(item.growth_duration or ""))
+        if not item.e_soil_ree_conc:
+            item.e_soil_ree_conc = encrypt_data(str(item.soil_ree_conc or ""))
+        if not item.e_plant_ree_conc:
+            item.e_plant_ree_conc = encrypt_data(str(item.plant_ree_conc or ""))
+        if not item.e_harvested_biomass:
+            item.e_harvested_biomass = encrypt_data(str(item.harvested_biomass or ""))
+        if not item.e_extraction_eff:
+            item.e_extraction_eff = encrypt_data(str(item.extraction_eff or ""))
+        if not item.e_initial_soil_ree:
+            item.e_initial_soil_ree = encrypt_data(str(item.initial_soil_ree or ""))
+        if not item.e_final_soil_ree:
+            item.e_final_soil_ree = encrypt_data(str(item.final_soil_ree or ""))
+        if not item.e_biomass_increase:
+            item.e_biomass_increase = encrypt_data(str(item.biomass_increase or ""))
+        if not item.e_growth_rate:
+            item.e_growth_rate = encrypt_data(str(item.growth_rate or ""))
+        if not item.e_growth_eff:
+            item.e_growth_eff = encrypt_data(str(item.growth_eff or ""))
+        if not item.e_total_metal:
+            item.e_total_metal = encrypt_data(str(item.total_metal or ""))
+        if not item.e_uptake:
+            item.e_uptake = encrypt_data(str(item.uptake or ""))
+        if not item.e_baf:
+            item.e_baf = encrypt_data(str(item.baf or ""))
+        item.save()
+    return render(request, "ext/ext_req.html", {"data": data})
+def getkey_ext(request, project_id):
+    data = get_object_or_404(phytomine, project_id=project_id)
+    reg_obj = get_object_or_404(registration, login=True, logout=False, department="EXTRACTOR")
+    token = generate_token(data.pk)
+    data.ext_decrypt_key = token
+    data.ext_get_key = True
+    data.save()
+    send_mail(
+        "EXTRACTOR: Secure Decryption Token",
+        f"Project ID: {data.project_id}\n\nYour Secure Token:\n{token}",
+        "your_email@example.com",
+        [reg_obj.email],
+        fail_silently=False,
+    )
+    messages.success(request, "Secure decryption key sent successfully")
+    return redirect("/ext_req/")
+def decrypt_ext(request, project_id):
+    d = get_object_or_404(phytomine, project_id=project_id)
+    if request.method == "POST":
+        token = request.POST.get("decryption_key", "").strip()
+        try:
+            if verify_token(token, d.pk):
+                d.ext_decrypt = True
+                d.save()
+                messages.success(request, f"{project_id}: Decryption Verified ✅")
+            else:
+                messages.error(request, f"{project_id}: Invalid or Expired Token ❌")
+        except Exception as e:
+            messages.error(request, f"Error: {str(e)}")
+    return redirect("/ext_req/")
+def ext_ana(request):
+    data = phytomine.objects.all()
+    return render(request, "ext/ext_ana.html", {"data": data})
+def ext_ana_process(request, project_id):
+    data= phytomine.objects.get(project_id=project_id)
+    recovered_metal = (data.total_metal * (data.extraction_eff / 100))
+    loss = data.total_metal - recovered_metal
+    recovery = data.extraction_eff
+    data.recovered_metal = round(recovered_metal, 3)
+    data.loss = round(loss, 3)
+    data.recovery = round(recovery, 3)
+    data.ext_scan = True
+    data.status = "EXTRACTOR Analysis Completed"
+    data.save()
+    messages.info(request,"EXTRACTOR Analysis Completed")
+    return redirect("/ext_ana/")
+def ext_rep(request):
+    data = phytomine.objects.all()
+    return render(request, "ext/ext_rep.html", {"data": data})
+6.2.5 SUSTAINER:
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.core.mail import send_mail
+from admins.models import *
+# Create your views here.
+def sus_home(request):
+    return render(request,'sus/sus_home.html')
+def sus_login(request):
+    return render(request,'sus/sus_login.html')
+def sus_reg(request):
+    if request.method =='POST':
+        name=request.POST['name']
+        email=request.POST['email']
+        mobile_no=request.POST['mobile_no']
+        department=request.POST['department']
+        registration(name=name,email=email,mobile_no=mobile_no,department=department).save()
+        messages.info(request,"SUSTAINER Registration successful")
+        return redirect('/sus_reg/')
+    else:
+        return render(request,"sus/sus_login.html")
+    
+def sus_validate_login(request):
+    if request.method=='POST':
+        
+        email = request.POST['email']
+        password = request.POST['password']
+        try:        
+            data = registration.objects.get(email=email, password=password, department="SUSTAINER")
+            if data.accept:   
+                data.login = True
+                data.logout = False
+                data.save()
+                # Store all three safely
+                request.session['user_id'] = data.id
+                request.session['email'] = data.email
+                request.session['department'] = data.department
+                messages.info(request, "SUSTAINER Login Successful")     
+                return redirect("/sus_home/")
+            else:
+                messages.info(request, "Wrong Credentials")
+                return redirect("/sus_login/")
+        except:
+            messages.info(request, "Wrong Credentials")
+            return redirect("/sus_login/")
+    return render(request, "sus/sus_login.html")
+def sus_logout(request):
+    user_id = request.session.get('user_id')
+    email = request.session.get('email')
+    department = request.session.get('department')
+    if user_id and department:
+        
+        try:
+            data = registration.objects.get(id=user_id, department=department, email=email)
+            data.login = False
+            data.logout = True
+            
+            data.save()
+        except registration.DoesNotExist:
+            
+            pass
+    # Clear all session data
+    request.session.flush()
+    messages.info (request,"SUSTAINER Logout Successfull")
+    return redirect("/")
+from django.shortcuts import get_object_or_404, render, redirect
+from django.core.mail import send_mail
+from django.contrib import messages
+from .crypto_utils import encrypt_data, decrypt_data, generate_token, verify_token
+def sus_req(request):
+    data = phytomine.objects.all()
+    for item in data:
+        if not item.e_initial_fern_biomass:
+            item.e_initial_fern_biomass = encrypt_data(str(item.initial_fern_biomass or ""))
+        if not item.e_final_fern_biomass:
+            item.e_final_fern_biomass = encrypt_data(str(item.final_fern_biomass or ""))
+        if not item.e_growth_duration:
+            item.e_growth_duration = encrypt_data(str(item.growth_duration or ""))
+        if not item.e_soil_ree_conc:
+            item.e_soil_ree_conc = encrypt_data(str(item.soil_ree_conc or ""))
+        if not item.e_plant_ree_conc:
+            item.e_plant_ree_conc = encrypt_data(str(item.plant_ree_conc or ""))
+        if not item.e_harvested_biomass:
+            item.e_harvested_biomass = encrypt_data(str(item.harvested_biomass or ""))
+        if not item.e_extraction_eff:
+            item.e_extraction_eff = encrypt_data(str(item.extraction_eff or ""))
+        if not item.e_initial_soil_ree:
+            item.e_initial_soil_ree = encrypt_data(str(item.initial_soil_ree or ""))
+        if not item.e_final_soil_ree:
+            item.e_final_soil_ree = encrypt_data(str(item.final_soil_ree or ""))
+        if not item.e_biomass_increase:
+            item.e_biomass_increase = encrypt_data(str(item.biomass_increase or ""))
+        if not item.e_growth_rate:
+            item.e_growth_rate = encrypt_data(str(item.growth_rate or ""))
+        if not item.e_growth_eff:
+            item.e_growth_eff = encrypt_data(str(item.growth_eff or ""))
+        if not item.e_total_metal:
+            item.e_total_metal = encrypt_data(str(item.total_metal or ""))
+        if not item.e_uptake:
+            item.e_uptake = encrypt_data(str(item.uptake or ""))
+        if not item.e_baf:
+            item.e_baf = encrypt_data(str(item.baf or ""))
+        if not item.e_recovered_metal:
+            item.e_recovered_metal = encrypt_data(str(item.recovered_metal or ""))
+        if not item.e_loss:
+            item.e_loss = encrypt_data(str(item.loss or ""))
+        if not item.e_recovery:
+            item.e_recovery = encrypt_data(str(item.recovery or ""))
+        item.save()
+    return render(request, "sus/sus_req.html", {"data": data})
+def getkey_sus(request, project_id):
+    data = get_object_or_404(phytomine, project_id=project_id)
+    reg_obj = get_object_or_404(registration, login=True, logout=False, department="SUSTAINER")
+    token = generate_token(data.pk)
+    data.sus_decrypt_key = token
+    data.sus_get_key = True
+    data.save()
+    send_mail(
+        "SUSTAINER: Secure Decryption Token",
+        f"Project ID: {data.project_id}\n\nYour Secure Token:\n{token}",
+        "your_email@example.com",
+        [reg_obj.email],
+        fail_silently=False,
+    )
+    messages.success(request, "Secure decryption key sent successfully")
+    return redirect("/sus_req/")
+def decrypt_sus(request, project_id):
+    d = get_object_or_404(phytomine, project_id=project_id)
+    if request.method == "POST":
+        token = request.POST.get("decryption_key", "").strip()
+        try:
+            if verify_token(token, d.pk):
+                d.sus_decrypt = True
+                d.save()
+                messages.success(request, f"{project_id}: Decryption Verified ✅")
+            else:
+                messages.error(request, f"{project_id}: Invalid or Expired Token ❌")
+        except Exception as e:
+            messages.error(request, f"Error: {str(e)}")
+    return redirect("/sus_req/")
+def sus_ana(request): 
+    data = phytomine.objects.all() 
+    return render(request, "sus/sus_ana.html", {"data": data})
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+def sus_ana_process(request, project_id):
+    data = phytomine.objects.get(project_id=project_id)
+    dataset_path = r"C:\\Users\\BASKAR\\Downloads\\Phytomine\\Phytomine\\dataset\\sus.csv"
+    df = pd.read_csv(dataset_path)
+    feature_cols = [
+        "INITIAL FERN BIOMASS (g)",
+        "FINAL FERN BIOMASS (g)",
+        "GROWTH DURATION (days)",
+        "SOIL REE CONCENTRATION (mg/kg)",
+        "PLANT REE CONCENTRATION (mg/kg)",
+        "HARVESTED BIOMASS (g)",
+        "EXTRACTION EFFICIENCY (%)",
+        "INITIAL SOIL REE (mg/kg)",
+        "FINAL SOIL REE (mg/kg)",
+        "BIOMASS INCREASE (g)",
+        "GROWTH RATE (g/day)",
+        "GROWTH EFFICIENCY (%)",
+        "TOTAL METAL (mg)",
+        "UPTAKE (%)",
+        "BAF",
+        "RECOVERED METAL (mg)",
+        "EXTRACTION LOSS (mg)",
+        "RECOVERY PERCENTAGE (%)"
+    ]
+    target_cols = ["Reduction (%)", "Safety Index"]
+    X = df[feature_cols].values
+    y = df[target_cols]
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    # ------------------------------
+    # K-Means Clustering
+    # ------------------------------
+    kmeans = KMeans(n_clusters=5, random_state=42)
+    clusters = kmeans.fit_predict(X_scaled)
+    df["cluster"] = clusters
+    # ------------------------------
+    # Prepare input
+    # ------------------------------
+    input_data = np.array([[  
+        data.initial_fern_biomass,
+        data.final_fern_biomass,
+        data.growth_duration,
+        data.soil_ree_conc,
+        data.plant_ree_conc,
+        data.harvested_biomass,
+        data.extraction_eff,
+        data.initial_soil_ree,
+        data.final_soil_ree,
+        data.biomass_increase,
+        data.growth_rate,
+        data.growth_eff,
+        data.total_metal,
+        data.uptake,
+        data.baf,
+        data.recovered_metal,
+        data.loss,
+        data.recovery,
+    ]])
+    input_scaled = scaler.transform(input_data)
+    cluster_id = kmeans.predict(input_scaled)[0]
+    # ------------------------------
+    # Fetch REAL values from dataset
+    # ------------------------------
+    cluster_data = df[df["cluster"] == cluster_id]
+    reduction = cluster_data["Reduction (%)"].mean()
+    safety_index = cluster_data["Safety Index"].mean()
+    # ------------------------------
+    # Save results
+    # ------------------------------
+    data.reduction = round(float(reduction), 2)
+    data.safety_index = round(float(safety_index), 2)
+    data.env_status = "Safe" if data.safety_index <= 3 else "Unsafe"
+    data.sus_scan = True
+    data.status = "SUSTAINER Analysis Completed"
+    data.save()
+    messages.info(request, "SUSTAINER Analysis Completed")
+    return redirect("/sus_ana/")
+def sus_rep(request):
+    data = phytomine.objects.all()
+    return render(request, "sus/sus_rep.html", {"data": data})
+                        
+                            CHAPTER 7
+TESTING
+7.1INTRODUCTION
+Software testing is a critical element of software quality assurance and represents the ultimate review of specification, design and coding. In fact, testing is the one step in the software engineering process that could be viewed as destructive rather than constructive.
+7.1.1 STRATEGIC APPROACH TO SOFTWARE TESTING
+The software engineering process can be viewed as a spiral. Initially system engineering defines the role of software and leads to software requirement analysis where the information domain, functions, behavior, performance, constraints and validation criteria for software are established. Moving inward along the spiral, we come to design and finally to coding. To develop computer software we spiral in along streamlines that decrease the level of abstraction on each turn.
+A strategy for software testing may also be viewed in the context of the spiral. Unit testing begins at the vertex of the spiral and concentrates on each unit of the software as implemented in source code. Testing progress is done by moving outward along the spiral to integration testing, where the focus is on the design and the construction of the software architecture. Talking another turn on outward on the spiral we encounter validation testing where requirements established as part of software requirements analysis are validated against the software that has been constructed. Finally, we arrive at system testing, where the software and other system elements are tested as a whole.
+        WHITEBOX TESTING    BLACKBOX TESTING    MODULE TESINGSUB-SYSTEM TESTINGUNIT TESTING
+        WHITEBOX TESTING
+    BLACKBOX TESTING
+    MODULE TESING
+SUB-SYSTEM TESTING
+UNIT TESTING
+7.2. TESTING PROCEDURES
+Unit testing focuses verification effort on the smallest unit of software design, the module. The unit testing we have is white box oriented and some modules the steps are conducted in parallel.
+1. WHITE BOX TESTING
+This type of testing ensures that
+All independent paths have been exercised at least once
+All logical decisions have been exercised on their true and false sides
+All loops are executed at their boundaries and within their operational bounds
+All internal data structures have been exercised to assure their validity.
+To follow the concept of white box testing we have tested each form .We have created independently to verify that Data flow is correct, All conditions are exercised to check their validity, All loops are executed on their boundaries.
+2. BLACK BOX TESTING
+Black Box Testing is a software testing method that evaluates the functionality of the system without examining its internal code structure or implementation logic. In the Phytomine project, this testing approach focuses on validating whether the system behaves correctly according to the specified requirements when different inputs are provided.
+Objectives of Black Box Testing in Phytomine
+To verify that all functional modules operate as intended.
+To ensure accurate processing of soil, plant, and metal concentration data.
+To validate user authentication and access control mechanisms.
+To confirm correct generation of reports and analysis results.
+To check system behavior under invalid or unexpected input conditions.
+3. MODULE TESTING
+In this part of the testing each of the conditions were tested to both true and false aspects. And all the resulting paths were tested. So that each path that may be generated on particular condition is traced to uncover any possible errors.
+4. SUB SYSTEM TESTING
+This type of testing selects the path of the program, according to the location of the definition and use of variables. This kind of testing was used only when some local variable were declared. The definition-use chain method was used in this type of testing. These were particularly useful in nested statements.
+5. UNIT TESTING
+In this type of testing all the loops are tested to all the limits possible. The following exercise was adopted for all loops:
+All the loops were tested at their limits, just above them and just below them.
+All the loops were skipped at least once.
+For nested loop test the innermost loop first and then work outwards.
+For concatenated loops the values of dependent loops were set with the help of a connected loop.
+CHAPTER 8
+                                        APPENDICS
+8.1  SCREENSHOTS
+8.2 DATABASE SCREENSHOT
+CONCLUSION
+9.1 CONCLUSION: 
+The Phytomine project presents a sustainable and technology-driven approach to metal recovery while prioritizing environmental protection. By integrating phytomining principles with a structured digital platform, the system demonstrates how natural plant-based processes can be effectively managed and monitored using modern computational techniques. This approach not only reduces dependence on traditional mining methods but also promotes eco-friendly resource utilization.Through its modular design, the project enables efficient management of cultivation, extraction, administration, and sustainability monitoring processes. The system ensures accurate data handling, improved transparency, and informed decision-making across all stages of metal recovery. By automating analysis and reporting, Phytomine minimizes manual errors and enhances operational efficiency.The project also highlights the potential of combining environmental science with information technology to address real-world challenges such as soil contamination and resource scarcity. Phytomine serves as a practical model for environmentally responsible metal extraction that balances economic feasibility with ecological safety.In conclusion, the Phytomine project successfully achieves its objectives by providing a reliable, scalable, and environmentally conscious platform for phytomining operations. It lays a strong foundation for future advancements in sustainable mining practices and demonstrates the effectiveness of digital systems in supporting green technologies.

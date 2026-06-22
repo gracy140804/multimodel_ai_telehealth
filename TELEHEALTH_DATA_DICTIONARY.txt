@@ -1,0 +1,111 @@
+# DATA DICTIONARY
+# PROJECT: AI-POWERED SMART TELEHEALTH PLATFORM
+
+This document provides a comprehensive description of the database entities, attributes, and relationships used in the Telehealth system.
+
+---
+
+## 1. ENTITY: USERS (users)
+Centralized table for all user accounts (Patients, Doctors, and Admins).
+
+| Attribute | Data Type | Constraint | Description |
+| :--- | :--- | :--- | :--- |
+| id | Integer | PK, AI | Unique identifier for the user. |
+| name | String(100) | NOT NULL | Full name of the user. |
+| email | String(255) | UNQ, IDX | Unique email address for login. |
+| password_hash | String(255) | NOT NULL | Securely hashed password (Bcrypt). |
+| role | Enum | NOT NULL | User classification: PATIENT, DOCTOR, or ADMIN. |
+| avatar_url | String(500) | NULL | URL to the user's profile picture. |
+| created_at | DateTime | DEFAULT NOW | Timestamp when the account was created. |
+
+---
+
+## 2. ENTITY: PATIENT PROFILES (patient_profiles)
+Stores clinical and personal demographics for patients.
+
+| Attribute | Data Type | Constraint | Description |
+| :--- | :--- | :--- | :--- |
+| id | Integer | PK, AI | Unique identifier for the profile. |
+| user_id | Integer | FK (users.id) | Link to the core user account. |
+| age | Integer | NULLABLE | Patient's age. |
+| gender | String(50) | NULLABLE | Male, Female, or Other. |
+| phone | String(20) | NULLABLE | Contact phone number. |
+| address | String(255) | NULLABLE | Residential address. |
+| blood_group | String(10) | NULLABLE | ABO/Rh blood type. |
+| weight | String(10) | NULLABLE | Patient weight in kg. |
+| medical_history | Text | NULLABLE | Detailed summary of past chronic illnesses. |
+
+---
+
+## 3. ENTITY: DOCTOR PROFILES (doctor_profiles)
+Stores professional credentials and approved status for doctors.
+
+| Attribute | Data Type | Constraint | Description |
+| :--- | :--- | :--- | :--- |
+| id | Integer | PK, AI | Unique identifier for the doctor profile. |
+| user_id | Integer | FK (users.id) | Link to the core user account. |
+| specialization | String(255) | NOT NULL | Field of expertise (e.g., Cardiology). |
+| qualification | String(255) | NULLABLE | Medical degrees (e.g., MBBS, MD). |
+| experience | Integer | NOT NULL | Total years of practice. |
+| consultation_fee| Float | NOT NULL | Fee per appointment. |
+| rating | Float | DEFAULT 0.0 | Calculated average patient rating. |
+| is_approved | Boolean | DEFAULT FALSE | Verified status by system admin. |
+| availability_schedule| JSON | NULLABLE | Serialized available hours per day. |
+
+---
+
+## 4. ENTITY: APPOINTMENTS (appointments)
+Manages the digital interaction between patients and doctors.
+
+| Attribute | Data Type | Constraint | Description |
+| :--- | :--- | :--- | :--- |
+| id | Integer | PK, AI | Unique appointment ID. |
+| patient_id | Integer | FK (patient_profiles.id)| ID of the patient. |
+| doctor_id | Integer | FK (doctor_profiles.id) | ID of the doctor. |
+| appointment_datetime| DateTime | NOT NULL | Scheduled start time. |
+| status | Enum | DEFAULT PENDING | State: PENDING, CONFIRMED, REJECTED, etc. |
+| payment_status | String(50) | DEFAULT UNPAID | Transaction state: PAID, UNPAID. |
+| video_room_id | String(100) | NULLABLE | Secure UUID for the video consult room. |
+| booking_source | String(50) | DEFAULT AI | Source: AI (Symptom Analyzer) or MANUAL. |
+
+---
+
+## 5. ENTITY: SYMPTOM RECORDS (symptom_records)
+Storage for AI-analysed symptom data.
+
+| Attribute | Data Type | Constraint | Description |
+| :--- | :--- | :--- | :--- |
+| id | Integer | PK, AI | Unique record ID. |
+| patient_id | Integer | FK (patient_profiles.id)| The patient who reported symptoms. |
+| raw_text | Text | NOT NULL | The original symptom text input. |
+| detected_language | String(50) | NULLABLE | Language detected by the AI model. |
+| analysed_specialization| String(255) | NULLABLE | AI recommended department. |
+| extracted_data | JSON | NOT NULL | Clinical data (keywords, urgency, etc.). |
+| created_at | DateTime | DEFAULT NOW | Time of analysis. |
+
+---
+
+## 6. ENTITY: LAB TESTS (lab_tests)
+Catalogue of available diagnostic tests.
+
+| Attribute | Data Type | Constraint | Description |
+| :--- | :--- | :--- | :--- |
+| id | Integer | PK, AI | Unique test ID. |
+| name | String(255) | NOT NULL | Name of the test (e.g., Blood Glucose). |
+| test_code | String(50) | UNQ | Unique identifier (e.g., BG-001). |
+| category | String(100) | NULLABLE | Department (e.g., Radiology). |
+| price | Float | NOT NULL | Cost of the test. |
+
+---
+
+## 7. ENTITY: NOTIFICATIONS (notifications)
+Real-time system alerts for users.
+
+| Attribute | Data Type | Constraint | Description |
+| :--- | :--- | :--- | :--- |
+| id | Integer | PK, AI | Unique notification ID. |
+| user_id | Integer | FK (users.id) | Recipient of the notification. |
+| title | String(255) | NOT NULL | Header of the alert. |
+| message | Text | NOT NULL | Detailed content of the alert. |
+| is_read | Boolean | DEFAULT FALSE | Status of user acknowledgment. |
+| type | String(50) | NOT NULL | Category: STATUS_CHANGE, APPOINTMENT. |
